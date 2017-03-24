@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.kotori.smarthome.activity.DoorActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#1296db">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="门禁控制"
+            android:textSize="20dp"
+            android:textColor="#ffffff"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            />
+    </RelativeLayout>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="200dp"
+        android:src="@mipmap/door_img"
+        android:scaleType="fitXY"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            >
+
+            <TextView
+                android:id="@+id/door_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="大门状态："
+                android:textSize="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentStart="true" />
+
+            <TextView
+                android:id="@+id/door_state"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="关闭"
+                android:textSize="20dp"
+                android:layout_marginLeft="10dp"
+                android:layout_alignTop="@+id/door_1"
+                android:layout_toEndOf="@+id/door_1" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            >
+
+            <TextView
+                android:id="@+id/door_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="密码保护:"
+                android:textSize="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentStart="true" />
+
+            <TextView
+                android:id="@+id/door_pwd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="关闭"
+                android:textSize="20dp"
+                android:layout_marginLeft="10dp"
+                android:layout_alignTop="@+id/door_2"
+                android:layout_toEndOf="@+id/door_2"
+                android:layout_marginRight="10dp"/>
+
+
+        </RelativeLayout>
+
+
+
+    </LinearLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/style_corner">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="30dp">
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/fan_switch"
+                android:id="@+id/door_switch"
+                android:layout_marginStart="40dp"
+                 />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="门禁开关"
+                android:textSize="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="48dp"
+
+                 />
+        </LinearLayout>
+
+
+        <EditText
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:ems="10"
+            android:id="@+id/door_edt"
+            android:hint="请输入门禁密码"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="40dp" />
+
+    </RelativeLayout>
+
+</LinearLayout>

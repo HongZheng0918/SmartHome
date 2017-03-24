@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="5dp"
+    android:paddingLeft="5dp"
+    android:paddingRight="5dp"
+    android:paddingTop="20dp"
+
+
+    >
+
+    <ImageView
+        android:id="@+id/img_grid"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:src="@mipmap/temp"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:id="@+id/tv_grid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="15dp"
+        android:text="温度环境"
+        android:layout_marginTop="5dp"
+        android:layout_below="@+id/img_grid"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>
