@@ -17,8 +17,8 @@ public class IsServiceRunningUtil {
         boolean isWork = false;
         ActivityManager myAM = (ActivityManager) mContext
                 .getSystemService(Context.ACTIVITY_SERVICE);
-        List<ActivityManager.RunningServiceInfo> myList = myAM.getRunningServices(100);
-        Log.v("you","执行判断服务方法");
+        List<ActivityManager.RunningServiceInfo> myList = myAM.getRunningServices(200);
+
         if (myList.size() <= 0) {
             return false;
         }
@@ -26,6 +26,7 @@ public class IsServiceRunningUtil {
             String mName = myList.get(i).service.getClassName().toString();
             if (mName.equals(serviceName)) {
                 isWork = true;
+                Log.v("you","服务存在");
                 break;
             }
         }

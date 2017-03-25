@@ -185,7 +185,7 @@ public class LinkService extends Service {
                 if (isConnected) {                           // 判断是否处于连接状态
                     if (mSocket != null && mSocket.isConnected()) {
                         String result = readFromInputStream(mIns);
-                        if (!result.equals("")) {            // 判断接收到消息是否为空
+                        if (result!=null) {            // 判断接收到消息是否为空
                             Log.v("you", result);
                             if (callback != null) {
                                 callback.onDataChange(result);

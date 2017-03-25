@@ -76,7 +76,7 @@ public class LightActivity extends Activity {
             @Override
             public void onClick(View v) {
                 boolean isRunning = IsServiceRunningUtil.
-                        isServiceRunning(LightActivity.this, "com.kotori.smarthome.service.LinkService");
+                        isServiceRunning(LightActivity.this, "com.kotori.smarthome.service.ControlService");
                 if (isRunning) {
                     if (mLivId == 0) {
                         mLightliv.setImageResource(R.drawable.light_open);
@@ -98,7 +98,7 @@ public class LightActivity extends Activity {
             @Override
             public void onClick(View v) {
                 boolean isRunning = IsServiceRunningUtil.
-                        isServiceRunning(LightActivity.this, "com.kotori.smarthome.service.LinkService");
+                        isServiceRunning(LightActivity.this, "com.kotori.smarthome.service.ControlService");
                 if (isRunning) {
                     if (mEatId == 0) {
                         mLighteat.setImageResource(R.drawable.light_open);
@@ -119,7 +119,7 @@ public class LightActivity extends Activity {
             @Override
             public void onClick(View v) {
                 boolean isRunning = IsServiceRunningUtil.
-                        isServiceRunning(LightActivity.this, "com.kotori.smarthome.service.LinkService");
+                        isServiceRunning(LightActivity.this, "com.kotori.smarthome.service.ControlService");
                 if (isRunning) {
                     if (mRoomId == 0) {
                         mLightroom.setImageResource(R.drawable.light_open);
