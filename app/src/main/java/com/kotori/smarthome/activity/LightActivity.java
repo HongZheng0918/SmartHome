@@ -22,10 +22,13 @@ public class LightActivity extends Activity {
     private ImageView mLighteat;
     private ImageView mLightroom;
     private Switch mLightSwitch;
+    private Switch mNightSwitch;
     private int mLightId;
+    private int mNightId;
     private int mLivId;
     private int mEatId;
     private int mRoomId;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +45,7 @@ public class LightActivity extends Activity {
         mLighteat = (ImageView) findViewById(R.id.light_eatingroom);
         mLightroom = (ImageView) findViewById(R.id.light_room);
         mLightSwitch = (Switch) findViewById(R.id.light_switch_all);
-
+        mNightSwitch = (Switch) findViewById(R.id.light_switch_night);
         mLightSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
@@ -68,6 +71,18 @@ public class LightActivity extends Activity {
 
             }
         });
+        mNightSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(mNightId == 0) {
+                    sendBroadcast("1");
+                }else{
+                    sendBroadcast("0");
+                }
+
+            }
+        });
+
     }
 
     // 设置点击事件

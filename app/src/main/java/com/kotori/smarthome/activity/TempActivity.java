@@ -113,7 +113,7 @@ public class TempActivity extends Activity implements ServiceConnection{
         get_temp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                    sendBroadcast("w");
+                    sendBroadcast("result","w");
                     new Thread(){
                         public void run(){
                             try {
@@ -172,9 +172,9 @@ public class TempActivity extends Activity implements ServiceConnection{
     }
 
     // 发送广播
-    public void sendBroadcast(String str){
+    public void sendBroadcast(String isOrder,String str){
         Intent intent = new Intent();
-        intent.putExtra("result",str);
+        intent.putExtra(isOrder,str);
         intent.setAction("com.kotori.smarthome.ORDER");
         sendBroadcast(intent);
     }

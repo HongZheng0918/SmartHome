@@ -206,7 +206,7 @@ public class LinkService extends Service {
                                 messageNotification("房门防盗");
                                 isDoor = true;
                             }
-                            if (result.equals("w")) {        // 收到窗户防盗预警
+                            if (result.equals("b")) {        // 收到窗户防盗预警
                                 messageNotification("窗户防盗");
                                 isWindow = true;
                             }

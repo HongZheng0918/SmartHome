@@ -11,6 +11,7 @@ import android.widget.ListView;
 
 import com.kotori.smarthome.R;
 import com.kotori.smarthome.activity.LinkActivity;
+import com.kotori.smarthome.activity.ParameterActivity;
 import com.kotori.smarthome.activity.ServiceSwtichActivity;
 import com.kotori.smarthome.adapter.MyListAdapter;
 import com.kotori.smarthome.util.ActivityUtil;
@@ -22,7 +23,7 @@ import com.kotori.smarthome.util.ActivityUtil;
 public class SystemFragment extends Fragment{
 
     private ListView mSystemlv;
-    private String [] mData = {"连接测试","服务开关","使用手册","关于我们"};
+    private String [] mData = {"连接测试","服务开关","参数配置","关于我们"};
 
     @Nullable
     @Override
@@ -49,9 +50,11 @@ public class SystemFragment extends Fragment{
                     case 0 :
                         ActivityUtil.startActivity(getActivity(), LinkActivity.class,false);
                         break;
-                    case 1:
+                    case 1 :
                         ActivityUtil.startActivity(getActivity(), ServiceSwtichActivity.class,false);
                         break;
+                    case 2 :
+                        ActivityUtil.startActivity(getActivity(), ParameterActivity.class,false);
                 }
             }
         });

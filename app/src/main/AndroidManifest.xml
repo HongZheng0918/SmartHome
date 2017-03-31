@@ -57,7 +57,9 @@
         <service
             android:name=".service.ControlService"
             android:enabled="true"
-            android:exported="true"></service>
+            android:exported="true" />
+
+        <activity android:name=".activity.ParameterActivity"></activity>
     </application>
 
 </manifest>

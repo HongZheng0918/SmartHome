@@ -2,6 +2,7 @@ package com.kotori.smarthome.activity;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -19,6 +20,7 @@ public class ServiceSwtichActivity extends Activity implements View.OnClickListe
     private Button OpenControlButton;
     private boolean isRunning;
     private boolean conRunning;
+    private SharedPreferences preferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +48,7 @@ public class ServiceSwtichActivity extends Activity implements View.OnClickListe
         OpenHomeButton.setOnClickListener(this);
         OpenControlButton = (Button) findViewById(R.id.btn_open_control_service);
         OpenControlButton.setOnClickListener(this);
+        preferences = getSharedPreferences("ip_port",MODE_PRIVATE);
 
     }
 
@@ -62,8 +65,8 @@ public class ServiceSwtichActivity extends Activity implements View.OnClickListe
                 }
                 else{
                     Intent serviceIntent = new Intent(this, LinkService.class);
-                    serviceIntent.putExtra("ip","192.168.191.1");
-                    serviceIntent.putExtra("port","8080");
+                    serviceIntent.putExtra("ip",preferences.getString("home_ip","192.168.1.254"));
+                    serviceIntent.putExtra("port",preferences.getString("home_port","8080"));
                     ToastUtil.showToast(ServiceSwtichActivity.this,"开启状态监测服务成功！");
                     startService(serviceIntent);
                     OpenHomeButton.setText("关闭家庭状态监控");
@@ -80,8 +83,8 @@ public class ServiceSwtichActivity extends Activity implements View.OnClickListe
                 }
                 else{
                     Intent controlIntent = new Intent(this, ControlService.class);
-                    controlIntent.putExtra("ip","192.168.1.253");
-                    controlIntent.putExtra("port","8888");
+                    controlIntent.putExtra("ip",preferences.getString("control_ip","192.168.1.253"));
+                    controlIntent.putExtra("port",preferences.getString("control_port","8888"));
                     ToastUtil.showToast(ServiceSwtichActivity.this,"开启控制平台服务成功！");
                     startService(controlIntent);
                     OpenControlButton.setText("关闭控制平台服务");
